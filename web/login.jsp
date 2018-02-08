@@ -23,7 +23,6 @@
                     if (keycode === 13) {
                         $('#btnLogin').click();
                     }
-                    //console.log(keycode);
                 });
             });
 
@@ -52,7 +51,7 @@
                         pass: pass
                     };
                     var dat = JSON.stringify(info);
-                    //Enviar datos JSON-----------------------------------------
+
                     $.ajax({
                         type: 'post',
                         url: ctx + '/Login',

@@ -53,7 +53,6 @@
             }
 
             function mostrarModulos() {
-                //var ctx = "${pageContext.request.contextPath}";
                 $.ajax({
                     type: 'post',
                     url: 'Perfilador',
