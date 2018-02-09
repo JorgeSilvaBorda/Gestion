@@ -31,7 +31,7 @@ public class Perfilador extends HttpServlet {
 	try {
 	    while (rs.next()) {
 		builder.append(""
-			+ "<li onclick='cargarModulo(\"" + rs.getString("NOMMODULO").toLowerCase() + "\", \""+rs.getString("IDMODULO")+"\");'>"
+			+ "<li onclick='cargarModulo(\"" + rs.getString("NOMMODULO").toLowerCase() + "\");'>"
 			+ "<a href='#'>"+rs.getString("NOMMODULO")+"</a>"
 			+ "</li>");
 	    }

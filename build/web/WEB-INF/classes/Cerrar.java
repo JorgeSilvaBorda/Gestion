@@ -15,7 +15,6 @@ public class Cerrar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-	//System.out.println("Se cierra la sesión");
 	HttpSession ses = request.getSession();
 	ses.setAttribute("user", null);
 	ses.setAttribute("usuario", null);
