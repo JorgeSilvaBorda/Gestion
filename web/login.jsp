@@ -11,13 +11,25 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="js/jquery-3.1.1.min.js?=<%out.print(randomNumber());%>" type="text/javascript"></script>
         <script src="js/bootstrap.js?=<%out.print(randomNumber());%>" type="text/javascript"></script>
+        <script src="js/jqueryrut.js?=<%out.print(randomNumber());%>" type="text/javascript"></script>
 
         <link href="css/bootstrap.css?=<%out.print(randomNumber());%>" rel="stylesheet" type="text/css"/>
+
         <title>Login</title>
     </head>
     <body>
         <script type="text/javascript">
+            String.prototype.replaceAll = function (target, replacement) {
+                return this.split(target).join(replacement);
+            };
             $(document).ready(function () {
+                $('#rutUsuario').Rut({
+                    on_error: function () {
+                        alert('Rut incorrecto.');
+                        $('#rutUsuario').focus();
+                    },
+                    format_on: 'keyup'
+                });
                 $(document).keypress(function (event) {
                     var keycode = (event.keyCode ? event.keyCode : event.which);
                     if (keycode === 13) {
@@ -28,7 +40,7 @@
 
             var ctx = "${pageContext.request.contextPath}";
             function validar() {
-                var rut = $('#rutUsuario').val();
+                var rut = $('#rutUsuario').val().replaceAll('.', '');
                 var pass = $('#passUsuario').val();
                 if (rut.length < 9) {
                     alert('Debe ingresar el rut correctamente.');
@@ -43,7 +55,7 @@
 
             function login() {
                 if (validar()) {
-                    var rut = $('#rutUsuario').val();
+                    var rut = $('#rutUsuario').val().replaceAll('.', '');
                     var pass = $('#passUsuario').val();
 
                     var info = {
@@ -86,7 +98,7 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="rutUsuario">Rut: </label>
-                            <input type="text" class="form-control" id="rutUsuario" maxlength="10" placeholder="12345678-9"/>
+                            <input type="text" class="form-control" id="rutUsuario" maxlength="12" placeholder="12345678-9"/>
                         </div>
                         <div class="form-group">
                             <label for="passUsuario">Password: </label>

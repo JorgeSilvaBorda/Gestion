@@ -30,10 +30,9 @@ public class Perfilador extends HttpServlet {
 	StringBuilder builder = new StringBuilder();
 	try {
 	    while (rs.next()) {
-		builder.append(""
-			+ "<li onclick='cargarModulo(\"" + rs.getString("NOMMODULO").toLowerCase() + "\");'>"
-			+ "<a href='#'>"+rs.getString("NOMMODULO")+"</a>"
-			+ "</li>");
+		builder.append("<li onclick='cargarModulo(\"").append(rs.getString("NOMMODULO").toLowerCase()).append("\");'><a href='#'>")
+			.append(rs.getString("NOMMODULO"))
+			.append("</a></li>");
 	    }
 	    c.cerrar();
 	    return builder.toString();

@@ -20,6 +20,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="js/jquery-3.1.1.min.js?=<%out.print(randomNumber());%>" type="text/javascript"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
 
         <script src="js/bootstrap.js?=<%out.print(randomNumber());%>" type="text/javascript"></script>
         <link href="css/bootstrap.css?=<%out.print(randomNumber());%>" rel="stylesheet" type="text/css"/>

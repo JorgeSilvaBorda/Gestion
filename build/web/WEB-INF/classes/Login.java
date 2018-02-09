@@ -23,7 +23,6 @@ public class Login extends HttpServlet {
 	Conexion c = new Conexion();
 	String passMd5 = Utiles.md5(entrada.getString("pass"));
 	ResultSet rs = c.ejecutarQuery("CALL SP_GET_LOGIN('"+entrada.getString("rut")+"', '"+passMd5+"')");
-	//System.out.println("El sp: " + "CALL SP_GET_LOGIN('"+entrada.getString("rut")+"', '"+passMd5+"')");
 	JSONObject usuario = new JSONObject();
 	int cont = 0;
 	try{
@@ -36,7 +35,6 @@ public class Login extends HttpServlet {
 		usuario.put("idtipousuario", rs.getString("IDTIPOUSUARIO"));
 		usuario.put("nomtipousuario", rs.getString("NOMTIPOUSUARIO"));
 		usuario.put("nivelusuario", rs.getInt("NIVELUSUARIO"));
-		//System.out.println("Usuario: " + usuario);
 		cont ++;
 	    }
 	    c.cerrar();
