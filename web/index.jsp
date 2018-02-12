@@ -9,7 +9,8 @@
             response.sendRedirect("login.jsp");
         }
     } catch (Exception ex) {
-
+        System.out.println("No se puede validar la sesión de usuario.");
+        System.out.println(ex);
     }
 
 %>
